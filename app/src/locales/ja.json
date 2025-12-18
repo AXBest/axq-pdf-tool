@@ -1,0 +1,68 @@
+{
+    "app": {
+        "title": "AXQ PDF Tool",
+        "poweredBy": "Powered by Rust + Tauri"
+    },
+    "nav": {
+        "split": "PDF 分割",
+        "merge": "PDF 結合",
+        "image": "画像 PDF 変換",
+        "edit": "Edit PDF Pages",
+        "word": "PDF to Word"
+    },
+    "common": {
+        "select": "選択",
+        "processing": "処理中...",
+        "save": "PDF 保存",
+        "success": "成功",
+        "error": "エラー",
+        "dragDrop": "ここにファイルをドラッグするか、追加をクリック",
+        "addFiles": "追加 / ドラッグ",
+        "changeFile": "ファイル変更",
+        "selectFile": "PDF 選択"
+    },
+    "split": {
+        "title": "PDF 分割",
+        "inputLabel": "入力 PDF",
+        "startPage": "開始ページ",
+        "endPage": "終了ページ",
+        "outputDir": "出力先ディレクトリ",
+        "selectPlaceholder": "PDFファイルを選択...",
+        "dirPlaceholder": "出力フォルダを選択...",
+        "action": "PDF 分割",
+        "fillError": "すべての項目を入力してください",
+        "successMsg": "成功！作成されたファイル："
+    },
+    "merge": {
+        "title": "PDF 結合",
+        "inputPlaceholder": "ここに PDF をドラッグするか、追加をクリック",
+        "action": "ファイルを結合",
+        "minFilesError": "少なくとも2つのファイルを選択してください",
+        "noFilesError": "PDFファイルがドロップされていません",
+        "successMsg": "{{count}} 個のファイルを {{path}} に結合しました"
+    },
+    "image": {
+        "title": "画像 PDF 変換",
+        "inputPlaceholder": "ここに画像をドラッグするか、追加をクリック",
+        "action": "PDF に変換",
+        "minImagesError": "少なくとも1つの画像を選択してください",
+        "noValidImages": "有効な画像ファイルがありません",
+        "successMsg": "{{count}} 枚の画像を {{path}} に変換しました"
+    },
+    "edit": {
+        "title": "Edit PDF Pages",
+        "pageCount": "{{count}} Pages",
+        "instruction": "Drag to reorder • Click trash to delete",
+        "emptyState": "Select a PDF to view and edit pages",
+        "saveAction": "Save PDF",
+        "saving": "Saving...",
+        "successMsg": "Saved edited PDF to {{path}}",
+        "page": "Page"
+    },
+    "word": {
+        "title": "PDF to Word",
+        "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
+        "action": "Convert to Word",
+        "successMsg": "Word document saved to {{path}}"
+    }
+}

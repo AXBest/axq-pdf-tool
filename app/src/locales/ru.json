@@ -1,0 +1,68 @@
+{
+    "app": {
+        "title": "AXQ PDF Tool",
+        "poweredBy": "Powered by Rust + Tauri"
+    },
+    "nav": {
+        "split": "Разделить PDF",
+        "merge": "Объединить PDF",
+        "image": "Изображение в PDF",
+        "edit": "Edit PDF Pages",
+        "word": "PDF to Word"
+    },
+    "common": {
+        "select": "Выбрать",
+        "processing": "Обработка...",
+        "save": "Сохранить PDF",
+        "success": "Успех",
+        "error": "Ошибка",
+        "dragDrop": "Перетащите файлы сюда или нажмите Добавить",
+        "addFiles": "Добавить / Перетащить файлы",
+        "changeFile": "Изменить файл",
+        "selectFile": "Выбрать PDF"
+    },
+    "split": {
+        "title": "Разделить PDF",
+        "inputLabel": "Входной PDF",
+        "startPage": "Начальная стр.",
+        "endPage": "Конечная стр.",
+        "outputDir": "Выходной каталог",
+        "selectPlaceholder": "Выберите PDF файл...",
+        "dirPlaceholder": "Выберите папку...",
+        "action": "Разделить PDF",
+        "fillError": "Пожалуйста, заполните все поля",
+        "successMsg": "Успех! Созданы файлы:"
+    },
+    "merge": {
+        "title": "Объединить PDF",
+        "inputPlaceholder": "Перетащите PDF сюда или нажмите Добавить",
+        "action": "Объединить файлы",
+        "minFilesError": "Пожалуйста, выберите хотя бы 2 файла",
+        "noFilesError": "PDF файлы не сброшены",
+        "successMsg": "Успешно объединено {{count}} файлов в {{path}}"
+    },
+    "image": {
+        "title": "Изображение в PDF",
+        "inputPlaceholder": "Перетащите изображения сюда или нажмите Добавить",
+        "action": "Конвертировать в PDF",
+        "minImagesError": "Пожалуйста, выберите хотя бы 1 изображение",
+        "noValidImages": "Нет допустимых файлов изображений",
+        "successMsg": "Успешно конвертировано {{count}} изображений в {{path}}"
+    },
+    "edit": {
+        "title": "Edit PDF Pages",
+        "pageCount": "{{count}} Pages",
+        "instruction": "Drag to reorder • Click trash to delete",
+        "emptyState": "Select a PDF to view and edit pages",
+        "saveAction": "Save PDF",
+        "saving": "Saving...",
+        "successMsg": "Saved edited PDF to {{path}}",
+        "page": "Page"
+    },
+    "word": {
+        "title": "PDF to Word",
+        "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
+        "action": "Convert to Word",
+        "successMsg": "Word document saved to {{path}}"
+    }
+}

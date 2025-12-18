@@ -1,0 +1,72 @@
+{
+    "app": {
+        "title": "AXQ PDF Tool",
+        "poweredBy": "Powered by Rust + Tauri"
+    },
+    "nav": {
+        "split": "PDF 分割",
+        "merge": "PDF 合并",
+        "image": "图片转 PDF",
+        "edit": "PDF 页面编辑",
+        "word": "PDF 转 Word"
+    },
+    "common": {
+        "select": "选择",
+        "processing": "处理中...",
+        "save": "保存 PDF",
+        "success": "成功",
+        "error": "错误",
+        "dragDrop": "拖拽文件到此处或点击添加",
+        "addFiles": "添加 / 拖拽文件",
+        "changeFile": "更换文件",
+        "selectFile": "选择 PDF",
+        "clearAll": "清空所有",
+        "cancel": "取消",
+        "confirm": "确认清空"
+    },
+    "split": {
+        "title": "PDF 分割",
+        "inputLabel": "输入 PDF",
+        "startPage": "起始页",
+        "endPage": "结束页",
+        "outputDir": "输出目录",
+        "selectPlaceholder": "选择 PDF 文件...",
+        "dirPlaceholder": "选择输出文件夹...",
+        "action": "分割 PDF",
+        "fillError": "请填写所有字段",
+        "successMsg": "成功！已创建文件："
+    },
+    "merge": {
+        "title": "PDF 合并",
+        "inputPlaceholder": "拖拽 PDF 到此处或点击添加",
+        "action": "合并文件",
+        "minFilesError": "请至少选择 2 个文件",
+        "noFilesError": "未检测到 PDF 文件",
+        "successMsg": "成功将 {{count}} 个文件合并到 {{path}}"
+    },
+    "image": {
+        "title": "图片转 PDF",
+        "inputPlaceholder": "拖拽图片到此处或点击添加",
+        "action": "转换为 PDF",
+        "minImagesError": "请至少选择 1 张图片",
+        "noValidImages": "未检测到有效的图片文件",
+        "successMsg": "成功将 {{count}} 张图片转换为 {{path}}",
+        "clearConfirmMsg": "确定要清空所有图片吗？此操作无法撤销。"
+    },
+    "edit": {
+        "title": "PDF 页面编辑",
+        "pageCount": "{{count}} 页",
+        "instruction": "拖拽重排 • 点击垃圾桶删除",
+        "emptyState": "选择 PDF 以查看和编辑页面",
+        "saveAction": "保存 PDF",
+        "saving": "保存中...",
+        "successMsg": "已保存编辑后的 PDF 到 {{path}}",
+        "page": "第"
+    },
+    "word": {
+        "title": "PDF 转 Word",
+        "warning": "注意：此功能仅提取文本。复杂的排版和图片可能无法保留。",
+        "action": "转换为 Word",
+        "successMsg": "Word 文档已保存至 {{path}}"
+    }
+}

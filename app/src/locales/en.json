@@ -1,0 +1,71 @@
+{
+    "app": {
+        "title": "AXQ PDF Tool",
+        "poweredBy": "Powered by Rust + Tauri"
+    },
+    "nav": {
+        "split": "Split PDF",
+        "merge": "Merge PDFs",
+        "image": "Image to PDF",
+        "edit": "Edit PDF Pages",
+        "word": "PDF to Word"
+    },
+    "common": {
+        "select": "Select",
+        "processing": "Processing...",
+        "save": "Save PDF",
+        "success": "Success",
+        "error": "Error",
+        "dragDrop": "Drag files here or click Add",
+        "addFiles": "Add / Drag Files",
+        "changeFile": "Change File",
+        "selectFile": "Select PDF",
+        "clearAll": "Clear All",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+    },
+    "split": {
+        "title": "Split PDF",
+        "inputLabel": "Input PDF",
+        "startPage": "Start Page",
+        "endPage": "End Page",
+        "outputDir": "Output Directory",
+        "selectPlaceholder": "Select a PDF file...",
+        "dirPlaceholder": "Select output folder...",
+        "action": "Split PDF",
+        "fillError": "Please fill all fields",
+        "successMsg": "Success! Created files:"
+    },
+    "merge": {
+        "title": "Merge PDFs",
+        "inputPlaceholder": "Drag PDFs here or click Add",
+        "action": "Merge Files",
+        "minFilesError": "Please select at least 2 files",
+        "noFilesError": "No PDF files dropped",
+        "successMsg": "Merged {{count}} files successfully to {{path}}"
+    },
+    "image": {
+        "title": "Image to PDF",
+        "inputPlaceholder": "Drag images here or click Add",
+        "action": "Convert to PDF",
+        "minImagesError": "Please select at least 1 image",
+        "noValidImages": "No valid image files dropped",
+        "successMsg": "Converted {{count}} images successfully to {{path}}"
+    },
+    "edit": {
+        "title": "Edit PDF Pages",
+        "pageCount": "{{count}} Pages",
+        "instruction": "Drag to reorder • Click trash to delete",
+        "emptyState": "Select a PDF to view and edit pages",
+        "saveAction": "Save PDF",
+        "saving": "Saving...",
+        "successMsg": "Saved edited PDF to {{path}}",
+        "page": "Page"
+    },
+    "word": {
+        "title": "PDF to Word",
+        "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
+        "action": "Convert to Word",
+        "successMsg": "Word document saved to {{path}}"
+    }
+}

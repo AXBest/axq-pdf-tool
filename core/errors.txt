@@ -1,0 +1,93 @@
+﻿cargo :     Checking pdf_core v0.1.0 (E:\rust-project\work_utils\pdf_tool\core)
+所在位置 行:1 字符: 1
++ cargo check 2>&1 | Out-File -Encoding utf8 errors.txt
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Checking pd...\pdf_tool\core):String) [], RemoteExcept 
+   ion
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+warning: unused import: `Operation`
+ --> core\src\engine.rs:2:31
+  |
+2 | use lopdf::content::{Content, Operation};
+  |                               ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::fs::File`
+ --> core\src\engine.rs:6:5
+  |
+6 | use std::fs::File;
+  |     ^^^^^^^^^^^^^
+
+warning: unused import: `std::io::BufWriter`
+ --> core\src\engine.rs:7:5
+  |
+7 | use std::io::BufWriter;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `PathBuf`
+ --> core\src\engine.rs:8:23
+  |
+8 | use std::path::{Path, PathBuf};
+  |                       ^^^^^^^
+
+warning: unused imports: `Docx`, `Paragraph`, and `Run`
+  --> core\src\engine.rs:10:15
+   |
+10 | use docx_rs::{Docx, Paragraph, Run};
+   |               ^^^^  ^^^^^^^^^  ^^^
+
+warning: unused imports: `ImageBuffer`, `ImageFormat`, and `Rgb`
+  --> core\src\engine.rs:11:13
+   |
+11 | use image::{ImageBuffer, ImageFormat, Rgb};
+   |             ^^^^^^^^^^^  ^^^^^^^^^^^  ^^^
+
+warning: unused import: `std::collections::BTreeMap`
+   --> core\src\engine.rs:362:9
+    |
+362 |     use std::collections::BTreeMap;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0614]: type `(u32, u16)` cannot be dereferenced
+   --> core\src\engine.rs:289:28
+    |
+289 |             new_pages.push(*object_id);
+    |                            ^^^^^^^^^^ can't be dereferenced
+
+error[E0631]: type mismatch in function arguments
+   --> core\src\engine.rs:357:45
+    |
+357 |     result.save(output).map(|_| ()).map_err(PdfError::Parse)
+    |                                     ------- ^^^^^^^^^^^^^^^ expected due to this
+    |                                     |
+    |                                     required by a bound introduced by this call
+    |
+   ::: core\src\error.rs:9:5
+    |
+  9 |     Parse(#[from] lopdf::Error),
+    |     ----- found signature defined here
+    |
+    = note: expected function signature `fn(std::io::Error) -> _`
+               found function signature `fn(lopdf::Error) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core
+\src\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+help: consider wrapping the function in a closure
+    |
+357 |     result.save(output).map(|_| ()).map_err(|arg0: std::io::Error| PdfError::Parse(/* lopdf::Error
+ */))
+    |                                             ++++++++++++++++++++++                ++++++++++++++++
+++++
+
+Some errors have detailed explanations: E0614, E0631.
+For more information about an error, try `rustc --explain E0614`.
+warning: `pdf_core` (lib) generated 7 warnings
+error: could not compile `pdf_core` (lib) due to 2 previous errors; 7 warnings emitted

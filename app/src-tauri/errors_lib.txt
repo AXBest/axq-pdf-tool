@@ -1,0 +1,165 @@
+﻿cargo :     Checking app v0.1.0 (E:\rust-project\work_utils\pdf_tool\app\src-tauri)
+所在位置 行:1 字符: 1
++ cargo check 2>&1 | Out-File -Encoding utf8 errors_lib.txt
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Checking ap...\app\src-tauri):String) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+error[E0425]: cannot find function `split` in crate `pdf_core`
+  --> app\src-tauri\src\lib.rs:23:19
+   |
+23 |         pdf_core::split(input_path, output_path, "split", start, end)
+   |                   ^^^^^ not found in `pdf_core`
+   |
+help: consider importing one of these functions
+   |
+ 1 + use pdf_core::engine::split;
+   |
+ 1 + use tokio::io::split;
+   |
+help: if you import `split`, refer to it directly
+   |
+23 -         pdf_core::split(input_path, output_path, "split", start, end)
+23 +         split(input_path, output_path, "split", start, end)
+   |
+
+error[E0425]: cannot find function `merge` in crate `pdf_core`
+  --> app\src-tauri\src\lib.rs:43:64
+   |
+43 |         tauri::async_runtime::spawn_blocking(move || pdf_core::merge(&input_paths, output_path))
+   |                                                                ^^^^^ not found in `pdf_core`
+   |
+help: consider importing this function
+   |
+ 1 + use pdf_core::engine::merge;
+   |
+help: if you import `merge`, refer to it directly
+   |
+43 -         tauri::async_runtime::spawn_blocking(move || pdf_core::merge(&input_paths, output_path))
+43 +         tauri::async_runtime::spawn_blocking(move || merge(&input_paths, output_path))
+   |
+
+error[E0282]: type annotations needed
+  --> app\src-tauri\src\lib.rs:22:18
+   |
+22 |       let result = tauri::async_runtime::spawn_blocking(move || {
+   |  __________________^
+23 | |         pdf_core::split(input_path, output_path, "split", start, end)
+24 | |     })
+25 | |     .await
+   | |__________^ cannot infer type
+
+error[E0282]: type annotations needed
+  --> app\src-tauri\src\lib.rs:29:25
+   |
+29 |         Ok(paths) => Ok(paths
+   |                         ^^^^^ cannot infer type
+
+error[E0282]: type annotations needed
+  --> app\src-tauri\src\lib.rs:31:19
+   |
+31 |             .map(|p| p.to_string_lossy().to_string())
+   |                   ^  - type must be known at this point
+   |
+help: consider giving this closure parameter an explicit type
+   |
+31 |             .map(|p: /* Type */| p.to_string_lossy().to_string())
+   |                    ++++++++++++
+
+error[E0282]: type annotations needed
+  --> app\src-tauri\src\lib.rs:33:23
+   |
+33 |         Err(e) => Err(e.to_string()),
+   |                       ^ cannot infer type
+
+error[E0282]: type annotations needed
+  --> app\src-tauri\src\lib.rs:43:9
+   |
+43 | /         tauri::async_runtime::spawn_blocking(move || pdf_core::merge(&input_paths, output_path))
+44 | |             .await
+   | |__________________^ cannot infer type
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:59:6
+    |
+ 59 |     .map_err(|e: JoinError| e.to_string())?;
+    |      ^^^^^^^ -------------- found signature defined here
+    |      |
+    |      expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:69:10
+    |
+ 69 |         .map_err(|e: JoinError| e.to_string())?;
+    |          ^^^^^^^ -------------- found signature defined here
+    |          |
+    |          expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:82:6
+    |
+ 82 |     .map_err(|e: JoinError| e.to_string())?;
+    |      ^^^^^^^ -------------- found signature defined here
+    |      |
+    |      expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:95:6
+    |
+ 95 |     .map_err(|e: JoinError| e.to_string())?;
+    |      ^^^^^^^ -------------- found signature defined here
+    |      |
+    |      expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+Some errors have detailed explanations: E0282, E0425, E0631.
+For more information about an error, try `rustc --explain E0282`.
+error: could not compile `app` (lib) due to 11 previous errors

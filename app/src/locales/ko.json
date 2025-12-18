@@ -1,0 +1,68 @@
+{
+    "app": {
+        "title": "AXQ PDF Tool",
+        "poweredBy": "Powered by Rust + Tauri"
+    },
+    "nav": {
+        "split": "PDF 분할",
+        "merge": "PDF 병합",
+        "image": "이미지 PDF 변환",
+        "edit": "Edit PDF Pages",
+        "word": "PDF to Word"
+    },
+    "common": {
+        "select": "선택",
+        "processing": "처리 중...",
+        "save": "PDF 저장",
+        "success": "성공",
+        "error": "오류",
+        "dragDrop": "파일을 드래그하거나 추가를 클릭하세요",
+        "addFiles": "추가 / 드래그",
+        "changeFile": "파일 변경",
+        "selectFile": "PDF 선택"
+    },
+    "split": {
+        "title": "PDF 분할",
+        "inputLabel": "입력 PDF",
+        "startPage": "시작 페이지",
+        "endPage": "종료 페이지",
+        "outputDir": "출력 디렉토리",
+        "selectPlaceholder": "PDF 파일을 선택하세요...",
+        "dirPlaceholder": "출력 폴더를 선택하세요...",
+        "action": "PDF 분할",
+        "fillError": "모든 필드를 입력해 주세요",
+        "successMsg": "성공! 생성된 파일:"
+    },
+    "merge": {
+        "title": "PDF 병합",
+        "inputPlaceholder": "PDF를 드래그하거나 추가를 클릭하세요",
+        "action": "파일 병합",
+        "minFilesError": "최소 2개의 파일을 선택해 주세요",
+        "noFilesError": "PDF 파일이 없습니다",
+        "successMsg": "{{count}}개의 파일을 {{path}}로 병합했습니다"
+    },
+    "image": {
+        "title": "이미지 PDF 변환",
+        "inputPlaceholder": "이미지를 드래그하거나 추가를 클릭하세요",
+        "action": "PDF로 변환",
+        "minImagesError": "최소 1개의 이미지를 선택해 주세요",
+        "noValidImages": "유효한 이미지 파일이 없습니다",
+        "successMsg": "{{count}}장의 이미지를 {{path}}로 변환했습니다"
+    },
+    "edit": {
+        "title": "Edit PDF Pages",
+        "pageCount": "{{count}} Pages",
+        "instruction": "Drag to reorder • Click trash to delete",
+        "emptyState": "Select a PDF to view and edit pages",
+        "saveAction": "Save PDF",
+        "saving": "Saving...",
+        "successMsg": "Saved edited PDF to {{path}}",
+        "page": "Page"
+    },
+    "word": {
+        "title": "PDF to Word",
+        "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
+        "action": "Convert to Word",
+        "successMsg": "Word document saved to {{path}}"
+    }
+}

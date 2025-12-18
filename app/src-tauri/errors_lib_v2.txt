@@ -1,0 +1,130 @@
+﻿cargo :     Checking app v0.1.0 (E:\rust-project\work_utils\pdf_tool\app\src-tauri)
+所在位置 行:1 字符: 1
++ cargo check 2>&1 | Out-File -Encoding utf8 errors_lib_v2.txt
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Checking ap...\app\src-tauri):String) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:26:6
+    |
+ 26 |     .map_err(|e: JoinError| e.to_string())?;
+    |      ^^^^^^^ -------------- found signature defined here
+    |      |
+    |      expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:45:14
+    |
+ 45 |             .map_err(|e: JoinError| e.to_string())?;
+    |              ^^^^^^^ -------------- found signature defined here
+    |              |
+    |              expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:59:6
+    |
+ 59 |     .map_err(|e: JoinError| e.to_string())?;
+    |      ^^^^^^^ -------------- found signature defined here
+    |      |
+    |      expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:69:10
+    |
+ 69 |         .map_err(|e: JoinError| e.to_string())?;
+    |          ^^^^^^^ -------------- found signature defined here
+    |          |
+    |          expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:82:6
+    |
+ 82 |     .map_err(|e: JoinError| e.to_string())?;
+    |      ^^^^^^^ -------------- found signature defined here
+    |      |
+    |      expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+error[E0631]: type mismatch in closure arguments
+   --> app\src-tauri\src\lib.rs:95:6
+    |
+ 95 |     .map_err(|e: JoinError| e.to_string())?;
+    |      ^^^^^^^ -------------- found signature defined here
+    |      |
+    |      expected due to this
+    |
+    = note: expected closure signature `fn(tauri::Error) -> _`
+               found closure signature `fn(tokio::task::JoinError) -> _`
+note: required by a bound in `Result::<T, E>::map_err`
+   --> C:\Users\Admin\.rustup\toolchains\stable-x86_64-pc-windows-msvc\lib/rustlib/src/rust\library\core\s
+rc\result.rs:964:12
+    |
+962 |     pub const fn map_err<F, O>(self, op: O) -> Result<T, F>
+    |                  ------- required by a bound in this associated function
+963 |     where
+964 |         O: [const] FnOnce(E) -> F + [const] Destruct,
+    |            ^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Result::<T, E>::map_err`
+
+For more information about this error, try `rustc --explain E0631`.
+error: could not compile `app` (lib) due to 6 previous errors
