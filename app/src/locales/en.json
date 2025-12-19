@@ -8,7 +8,8 @@
         "merge": "Merge PDFs",
         "image": "Image to PDF",
         "edit": "Edit PDF Pages",
-        "word": "PDF to Word"
+        "word": "PDF to Word",
+        "pdfImage": "PDF to Image"
     },
     "common": {
         "select": "Select",
@@ -22,7 +23,8 @@
         "selectFile": "Select PDF",
         "clearAll": "Clear All",
         "cancel": "Cancel",
-        "confirm": "Confirm"
+        "confirm": "Confirm",
+        "clickToChange": "Click to change file"
     },
     "split": {
         "title": "Split PDF",
@@ -67,5 +69,12 @@
         "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
         "action": "Convert to Word",
         "successMsg": "Word document saved to {{path}}"
+    },
+    "pdfToImage": {
+        "title": "PDF to Image",
+        "description": "Convert each PDF page into a high-quality image.",
+        "selectOutput": "Select Output Folder",
+        "action": "Start Conversion",
+        "successMsg": "Images extracted to {{path}}"
     }
 }

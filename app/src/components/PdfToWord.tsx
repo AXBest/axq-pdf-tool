@@ -3,7 +3,7 @@ import { invoke } from '@tauri-apps/api/core';
 import { open, save } from '@tauri-apps/plugin-dialog';
 import { listen } from '@tauri-apps/api/event';
 import { useTranslation } from "react-i18next";
-import { FileText, FileType, ArrowRight } from 'lucide-react';
+import { FileText, FileType, ArrowRight, FileUp } from 'lucide-react';
 
 export default function PdfToWord({ isActive }: { isActive: boolean }) {
     const { t } = useTranslation();
@@ -100,23 +100,30 @@ export default function PdfToWord({ isActive }: { isActive: boolean }) {
                 </div>
 
                 <div className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-1">{t('split.inputLabel')}</label>
-                        <div className="flex gap-2">
-                            <input
-                                type="text"
-                                value={inputPath}
-                                readOnly
-                                className="flex-1 px-3 py-2 border border-slate-300 rounded-lg bg-slate-50 text-sm"
-                                placeholder={t('split.selectPlaceholder')}
-                            />
-                            <button
-                                onClick={selectFile}
-                                className="px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-2 transition-colors"
-                            >
-                                <FileText className="w-4 h-4" />
-                                {t('common.select')}
-                            </button>
+                    {/* File Drop Zone */}
+                    <div
+                        onClick={selectFile}
+                        className={`
+                            group border-2 border-dashed rounded-lg p-10
+                            text-center cursor-pointer transition-all duration-200
+                            ${isDragOver
+                                ? 'border-indigo-500 bg-indigo-50'
+                                : inputPath
+                                    ? 'border-indigo-200 bg-indigo-50/30'
+                                    : 'border-slate-200 hover:border-indigo-400 hover:bg-slate-50'
+                            }
+                        `}
+                    >
+                        <div className="flex flex-col items-center space-y-2">
+                            <div className={`p-3 rounded-full ${isDragOver || inputPath ? 'bg-indigo-100 text-indigo-600' : 'bg-slate-100 text-slate-400'}`}>
+                                {inputPath ? <FileText className="w-6 h-6" /> : <FileUp className="w-6 h-6" />}
+                            </div>
+                            <p className={`text-sm font-medium ${inputPath ? 'text-indigo-900' : 'text-slate-600'}`}>
+                                {inputPath ? inputPath.split('\\').pop()?.split('/').pop() : t('common.selectFile')}
+                            </p>
+                            <p className="text-xs text-slate-400">
+                                {inputPath ? t('common.clickToChange') : t('common.dragDrop')}
+                            </p>
                         </div>
                     </div>
 

@@ -5,9 +5,10 @@ import Merge from "./components/Merge";
 import ImageToPdf from "./components/ImageToPdf";
 import EditPdf from "./components/EditPdf";
 import PdfToWord from "./components/PdfToWord";
+import PdfToImage from "./components/PdfToImage";
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'split' | 'merge' | 'image' | 'edit' | 'word'>('split');
+  const [activeTab, setActiveTab] = useState<'split' | 'merge' | 'image' | 'edit' | 'word' | 'pdf-image'>('split');
   const { t } = useTranslation();
 
   return (
@@ -68,6 +69,15 @@ function App() {
             >
               {t('nav.word')}
             </button>
+            <button
+              onClick={() => setActiveTab('pdf-image')}
+              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${activeTab === 'pdf-image'
+                ? 'bg-indigo-50 text-indigo-700'
+                : 'text-slate-600 hover:bg-slate-50'
+                }`}
+            >
+              {t('nav.pdfImage')}
+            </button>
           </nav>
 
           <div className="mt-auto p-4 border-t border-slate-100">
@@ -93,6 +103,9 @@ function App() {
           </div>
           <div className={`absolute inset-0 overflow-auto ${activeTab === 'word' ? '' : 'hidden'}`}>
             <PdfToWord isActive={activeTab === 'word'} />
+          </div>
+          <div className={`absolute inset-0 overflow-auto ${activeTab === 'pdf-image' ? '' : 'hidden'}`}>
+            <PdfToImage isActive={activeTab === 'pdf-image'} />
           </div>
         </main>
       </div>

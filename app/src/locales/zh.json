@@ -8,7 +8,8 @@
         "merge": "PDF 合并",
         "image": "图片转 PDF",
         "edit": "PDF 页面编辑",
-        "word": "PDF 转 Word"
+        "word": "PDF 转 Word",
+        "pdfImage": "PDF 转图片"
     },
     "common": {
         "select": "选择",
@@ -22,7 +23,8 @@
         "selectFile": "选择 PDF",
         "clearAll": "清空所有",
         "cancel": "取消",
-        "confirm": "确认清空"
+        "confirm": "确认清空",
+        "clickToChange": "点击更换文件"
     },
     "split": {
         "title": "PDF 分割",
@@ -68,5 +70,12 @@
         "warning": "注意：此功能仅提取文本。复杂的排版和图片可能无法保留。",
         "action": "转换为 Word",
         "successMsg": "Word 文档已保存至 {{path}}"
+    },
+    "pdfToImage": {
+        "title": "PDF 转图片",
+        "description": "将 PDF 的每一页转换为高清 PNG 图片。",
+        "selectOutput": "选择输出文件夹",
+        "action": "开始转换",
+        "successMsg": "图片已提取到 {{path}}"
     }
 }

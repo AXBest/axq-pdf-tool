@@ -7,8 +7,9 @@
         "split": "PDF 분할",
         "merge": "PDF 병합",
         "image": "이미지 PDF 변환",
-        "edit": "Edit PDF Pages",
-        "word": "PDF to Word"
+        "edit": "PDF 페이지 편집",
+        "word": "PDF를 Word로",
+        "pdfImage": "PDF를 이미지로"
     },
     "common": {
         "select": "선택",
@@ -19,7 +20,11 @@
         "dragDrop": "파일을 드래그하거나 추가를 클릭하세요",
         "addFiles": "추가 / 드래그",
         "changeFile": "파일 변경",
-        "selectFile": "PDF 선택"
+        "selectFile": "PDF 선택",
+        "clearAll": "모두 삭제",
+        "cancel": "취소",
+        "confirm": "확인",
+        "clickToChange": "클릭하여 파일 변경"
     },
     "split": {
         "title": "PDF 분할",
@@ -47,22 +52,30 @@
         "action": "PDF로 변환",
         "minImagesError": "최소 1개의 이미지를 선택해 주세요",
         "noValidImages": "유효한 이미지 파일이 없습니다",
-        "successMsg": "{{count}}장의 이미지를 {{path}}로 변환했습니다"
+        "successMsg": "{{count}}장의 이미지를 {{path}}로 변환했습니다",
+        "clearConfirmMsg": "모든 이미지를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다."
     },
     "edit": {
-        "title": "Edit PDF Pages",
-        "pageCount": "{{count}} Pages",
-        "instruction": "Drag to reorder • Click trash to delete",
-        "emptyState": "Select a PDF to view and edit pages",
-        "saveAction": "Save PDF",
-        "saving": "Saving...",
-        "successMsg": "Saved edited PDF to {{path}}",
-        "page": "Page"
+        "title": "PDF 페이지 편집",
+        "pageCount": "{{count}} 페이지",
+        "instruction": "드래그하여 재정렬 • 휴지통 클릭하여 삭제",
+        "emptyState": "PDF를 선택하여 페이지 보기 및 편집",
+        "saveAction": "PDF 저장",
+        "saving": "저장 중...",
+        "successMsg": "편집된 PDF를 {{path}}에 저장했습니다",
+        "page": "페이지"
     },
     "word": {
-        "title": "PDF to Word",
-        "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
-        "action": "Convert to Word",
-        "successMsg": "Word document saved to {{path}}"
+        "title": "PDF를 Word로",
+        "warning": "주의: 이 기능은 텍스트만 추출합니다. 복잡한 레이아웃과 이미지는 보존되지 않을 수 있습니다.",
+        "action": "Word로 변환",
+        "successMsg": "Word 문서가 {{path}}에 저장되었습니다"
+    },
+    "pdfToImage": {
+        "title": "PDF를 이미지로",
+        "description": "PDF의 각 페이지를 고품질 이미지로 변환합니다.",
+        "selectOutput": "출력 폴더 선택",
+        "action": "변환 시작",
+        "successMsg": "이미지가 {{path}}에 추출되었습니다"
     }
 }

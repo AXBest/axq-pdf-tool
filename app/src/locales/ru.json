@@ -7,8 +7,9 @@
         "split": "Разделить PDF",
         "merge": "Объединить PDF",
         "image": "Изображение в PDF",
-        "edit": "Edit PDF Pages",
-        "word": "PDF to Word"
+        "edit": "Редактировать страницы",
+        "word": "PDF в Word",
+        "pdfImage": "PDF в изображения"
     },
     "common": {
         "select": "Выбрать",
@@ -19,7 +20,11 @@
         "dragDrop": "Перетащите файлы сюда или нажмите Добавить",
         "addFiles": "Добавить / Перетащить файлы",
         "changeFile": "Изменить файл",
-        "selectFile": "Выбрать PDF"
+        "selectFile": "Выбрать PDF",
+        "clearAll": "Очистить всё",
+        "cancel": "Отмена",
+        "confirm": "Подтвердить",
+        "clickToChange": "Нажмите, чтобы изменить файл"
     },
     "split": {
         "title": "Разделить PDF",
@@ -47,22 +52,30 @@
         "action": "Конвертировать в PDF",
         "minImagesError": "Пожалуйста, выберите хотя бы 1 изображение",
         "noValidImages": "Нет допустимых файлов изображений",
-        "successMsg": "Успешно конвертировано {{count}} изображений в {{path}}"
+        "successMsg": "Успешно конвертировано {{count}} изображений в {{path}}",
+        "clearConfirmMsg": "Вы уверены, что хотите очистить все изображения? Это действие нельзя отменить."
     },
     "edit": {
-        "title": "Edit PDF Pages",
-        "pageCount": "{{count}} Pages",
-        "instruction": "Drag to reorder • Click trash to delete",
-        "emptyState": "Select a PDF to view and edit pages",
-        "saveAction": "Save PDF",
-        "saving": "Saving...",
-        "successMsg": "Saved edited PDF to {{path}}",
-        "page": "Page"
+        "title": "Редактировать страницы",
+        "pageCount": "{{count}} страниц",
+        "instruction": "Перетащите для изменения порядка • Нажмите корзину для удаления",
+        "emptyState": "Выберите PDF для просмотра и редактирования страниц",
+        "saveAction": "Сохранить PDF",
+        "saving": "Сохранение...",
+        "successMsg": "Редактированный PDF сохранён в {{path}}",
+        "page": "Страница"
     },
     "word": {
-        "title": "PDF to Word",
-        "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
-        "action": "Convert to Word",
-        "successMsg": "Word document saved to {{path}}"
+        "title": "PDF в Word",
+        "warning": "Примечание: Эта функция извлекает только текст. Сложные макеты и изображения могут не сохраниться.",
+        "action": "Конвертировать в Word",
+        "successMsg": "Word документ сохранён в {{path}}"
+    },
+    "pdfToImage": {
+        "title": "PDF в изображения",
+        "description": "Конвертируйте каждую страницу PDF в высококачественное изображение.",
+        "selectOutput": "Выберите папку для вывода",
+        "action": "Начать конвертацию",
+        "successMsg": "Изображения извлечены в {{path}}"
     }
 }

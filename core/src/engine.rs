@@ -327,11 +327,11 @@ pub fn reorder_pages<P: AsRef<Path>>(
             .map(|&id| Object::Reference(id))
             .collect::<Vec<_>>(),
     ); // Assuming flat tree for simplicity or that we just updated the root.
-    // Note: If the original PDF has a nested page tree, this simply updating "Kids" on the root node
-    // might break navigation if the Kids were intermediate nodes.
-    // A robust solution is complex.
-    // BUT, `lopdf` Documentation says `get_pages` returns all page objects.
-    // If we just set "Kids" to all leaf page objects, we flatten the tree. This is valid PDF (mostly).
+       // Note: If the original PDF has a nested page tree, this simply updating "Kids" on the root node
+       // might break navigation if the Kids were intermediate nodes.
+       // A robust solution is complex.
+       // BUT, `lopdf` Documentation says `get_pages` returns all page objects.
+       // If we just set "Kids" to all leaf page objects, we flatten the tree. This is valid PDF (mostly).
 
     // Update Parent reference for all pages to point to the root Pages object
     for page_id in &new_pages {
@@ -403,6 +403,65 @@ pub fn pdf_to_word<P: AsRef<Path>>(input: P, output: P) -> Result<(), PdfError> 
     Ok(())
 }
 
+pub fn pdf_to_images<P: AsRef<Path>>(
+    input: P,
+    output_dir: P,
+    pdfium_path: P,
+) -> Result<(), PdfError> {
+    use pdfium_render::prelude::*;
+
+    let input_path = input.as_ref();
+    let output_base = output_dir.as_ref();
+
+    // 1. Determine output sub-directory name
+    let file_stem = input_path
+        .file_stem()
+        .and_then(|s| s.to_str())
+        .unwrap_or("output");
+    let target_dir = output_base.join(file_stem);
+
+    if !target_dir.exists() {
+        std::fs::create_dir_all(&target_dir)
+            .map_err(|e| PdfError::Operation(format!("Failed to create output dir: {}", e)))?;
+    }
+
+    // 2. Initialize Pdfium
+    let pdfium = Pdfium::new(
+        Pdfium::bind_to_library(pdfium_path.as_ref().to_str().ok_or_else(|| PdfError::Operation("Invalid PDFium path".to_string()))?)
+            .or_else(|_| Pdfium::bind_to_system_library())
+            .map_err(|e| PdfError::Operation(format!("Failed to bind Pdfium at {:?}: {}. Please ensure pdfium.dll is correct and has required runtime dependencies.", pdfium_path.as_ref(), e)))?,
+    );
+
+    // 3. Load Document
+    let document = pdfium
+        .load_pdf_from_file(input_path, None)
+        .map_err(|e| PdfError::Operation(format!("Failed to load PDF: {}", e)))?;
+
+    // 4. Render Pages
+    let render_config = PdfRenderConfig::new()
+        .set_target_width(2000) // Set a reasonable high width for "HD" quality, aspect ratio preserved
+        .set_maximum_height(2000)
+        .rotate_if_landscape(PdfPageRenderRotation::None, true); // Auto rotate if needed? Maybe no, let's keep original
+
+    for (i, page) in document.pages().iter().enumerate() {
+        let bitmap = page
+            .render_with_config(&render_config)
+            .map_err(|e| PdfError::Operation(format!("Failed to render page {}: {}", i, e)))?;
+
+        let image = bitmap.as_image(); // RgbaImage
+
+        // 5. Save Image
+        let image_filename = format!("{}_page_{:03}.png", file_stem, i + 1);
+        let image_path = target_dir.join(image_filename);
+
+        image
+            .save_with_format(&image_path, image::ImageFormat::Png)
+            .map_err(|e| PdfError::Operation(format!("Failed to save image: {}", e)))?;
+    }
+
+    Ok(())
+}
+
 fn extract_text_from_object(obj: &Object) -> Result<String, ()> {
     match obj {
         Object::String(bytes, _) => Ok(String::from_utf8_lossy(bytes).to_string()),
@@ -423,7 +482,7 @@ fn extract_text_from_object(obj: &Object) -> Result<String, ()> {
 mod tests {
     use super::*;
     use lopdf::content::{Content, Operation};
-    use lopdf::{Stream, dictionary};
+    use lopdf::{dictionary, Stream};
 
     fn create_dummy_pdf(path: &Path, pages: u32) -> Result<(), Box<dyn std::error::Error>> {
         let mut doc = Document::with_version("1.5");

@@ -7,8 +7,9 @@
         "split": "PDF 分割",
         "merge": "PDF 結合",
         "image": "画像 PDF 変換",
-        "edit": "Edit PDF Pages",
-        "word": "PDF to Word"
+        "edit": "PDFページ編集",
+        "word": "PDF から Word",
+        "pdfImage": "PDF から画像"
     },
     "common": {
         "select": "選択",
@@ -19,7 +20,11 @@
         "dragDrop": "ここにファイルをドラッグするか、追加をクリック",
         "addFiles": "追加 / ドラッグ",
         "changeFile": "ファイル変更",
-        "selectFile": "PDF 選択"
+        "selectFile": "PDF 選択",
+        "clearAll": "すべてクリア",
+        "cancel": "キャンセル",
+        "confirm": "確認",
+        "clickToChange": "クリックしてファイルを変更"
     },
     "split": {
         "title": "PDF 分割",
@@ -47,22 +52,30 @@
         "action": "PDF に変換",
         "minImagesError": "少なくとも1つの画像を選択してください",
         "noValidImages": "有効な画像ファイルがありません",
-        "successMsg": "{{count}} 枚の画像を {{path}} に変換しました"
+        "successMsg": "{{count}} 枚の画像を {{path}} に変換しました",
+        "clearConfirmMsg": "すべての画像をクリアしてもよろしいですか？この操作は取り消せません。"
     },
     "edit": {
-        "title": "Edit PDF Pages",
-        "pageCount": "{{count}} Pages",
-        "instruction": "Drag to reorder • Click trash to delete",
-        "emptyState": "Select a PDF to view and edit pages",
-        "saveAction": "Save PDF",
-        "saving": "Saving...",
-        "successMsg": "Saved edited PDF to {{path}}",
-        "page": "Page"
+        "title": "PDFページ編集",
+        "pageCount": "{{count}} ページ",
+        "instruction": "ドラッグで並べ替え • ゴミ箱をクリックで削除",
+        "emptyState": "PDFを選択してページを表示・編集",
+        "saveAction": "PDF 保存",
+        "saving": "保存中...",
+        "successMsg": "編集したPDFを {{path}} に保存しました",
+        "page": "ページ"
     },
     "word": {
-        "title": "PDF to Word",
-        "warning": "Note: This feature extracts text only. Complex layouts and images may not be preserved.",
-        "action": "Convert to Word",
-        "successMsg": "Word document saved to {{path}}"
+        "title": "PDF から Word",
+        "warning": "注意：この機能はテキストのみを抽出します。複雑なレイアウトや画像は保持されない場合があります。",
+        "action": "Word に変換",
+        "successMsg": "Word ドキュメントを {{path}} に保存しました"
+    },
+    "pdfToImage": {
+        "title": "PDF から画像",
+        "description": "PDFの各ページを高品質な画像に変換します。",
+        "selectOutput": "出力フォルダを選択",
+        "action": "変換開始",
+        "successMsg": "画像を {{path}} に抽出しました"
     }
 }
